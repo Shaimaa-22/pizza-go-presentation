@@ -147,9 +147,13 @@ const prevSlide = useCallback(() => {
 
       {/* Slide content */}
       <div className="relative z-10 w-full h-full">
-        <SlideTransition slideIndex={currentSlide} direction={direction}>
-          <CurrentSlideComponent />
-        </SlideTransition>
+<SlideTransition
+  slideIndex={currentSlide}
+  direction={direction}
+  transitionType="cube"
+>
+  <CurrentSlideComponent />
+</SlideTransition>
       </div>
 
       {/* Navigation */}
