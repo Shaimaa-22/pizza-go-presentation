@@ -557,11 +557,7 @@ export function HardwareSlide() {
             <img
               src="/image2.png"
               alt="Pizza Go Hardware"
-className="w-full h-[400px] object-contain rounded-lg"            />
-
-            <p className="text-center text-sm text-muted-foreground mt-3">
-              Pizza Go Prototype – Automated Pizza Preparation Machine
-            </p>
+className="w-full h-[400px] object-contain rounded-lg"    />
           </div>
         </GlowingBorder>
       </div>
