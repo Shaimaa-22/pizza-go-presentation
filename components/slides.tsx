@@ -385,9 +385,7 @@ export function HardwareSlide() {
     { name: "Linear Actuators", qty: "6x" },
     { name: "Vibration Motors", qty: "3x" },
     { name: "Relay Modules", qty: "20x" },
-    { name: "Motor Drivers", qty: "3x" },
-    { name: "PCF8575 Modules", qty: "2x" },
-    { name: "Power Supplies", qty: "Multiple" },
+    { name: "Power Supplies", qty: "12V / 5V" },
   ]
 
   return (
@@ -407,7 +405,7 @@ export function HardwareSlide() {
                   {comp.qty}
                 </span>
 
-                <span className="font-medium">
+                <span className="font-medium text-lg">
                   {comp.name}
                 </span>
               </div>
@@ -415,14 +413,18 @@ export function HardwareSlide() {
           ))}
         </StaggerContainer>
 
-        {/* Real Hardware Image */}
+        {/* Hardware Image */}
         <GlowingBorder>
           <div className="p-3 bg-card rounded-xl">
             <img
               src="/image2.png"
               alt="Pizza Go Hardware"
-              className="w-full h-[500px] object-contain rounded-lg"
+              className="w-full h-[550px] object-cover rounded-lg"
             />
+
+            <p className="text-center text-sm text-muted-foreground mt-3">
+              Pizza Go Prototype – Automated Pizza Preparation Machine
+            </p>
           </div>
         </GlowingBorder>
 
