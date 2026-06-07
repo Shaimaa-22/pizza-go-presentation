@@ -371,21 +371,18 @@ export function DatabaseSlide() {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center px-8">
-      <h2 className="text-5xl md:text-6xl font-bold mb-8">
+      <h2 className="text-5xl md:text-6xl font-bold mb-6">
         Database <span className="gradient-text">Design</span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl w-full items-center">
         <GlowingBorder>
-          <div className="p-8 text-center h-full flex flex-col items-center justify-center">
-            <Database className="w-20 h-20 text-primary mb-4" />
-            <h3 className="text-2xl font-bold mb-2">PostgreSQL ERD</h3>
-            <p className="text-muted-foreground text-sm">
-              The database stores users, orders, toppings, payments, machine commands, and logs.
-            </p>
-            <p className="text-xs text-muted-foreground mt-4">
-              Replace this card with the ERD image from the report if needed.
-            </p>
+          <div className="p-4 bg-white rounded-xl">
+            <img
+              src="/image.png"
+              alt="Pizza Go ERD"
+              className="w-full max-h-[430px] object-contain rounded-lg"
+            />
           </div>
         </GlowingBorder>
 
