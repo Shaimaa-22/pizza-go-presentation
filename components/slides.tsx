@@ -359,24 +359,14 @@ export function WorkflowSlide() {
 
 // Slide 6: Database / ERD
 export function DatabaseSlide() {
-  const tables = [
-    "Users",
-    "Orders",
-    "Toppings",
-    "Order_Toppings",
-    "Machine_Commands",
-    "Machine_Logs",
-    "System_Settings",
-  ]
-
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-8">
-      <h2 className="text-5xl md:text-6xl font-bold mb-5">
+    <div className="w-full h-full flex flex-col items-center justify-center px-8 pb-20">
+      <h2 className="text-5xl md:text-6xl font-bold mb-6">
         Database <span className="gradient-text">Design</span>
       </h2>
 
-      <GlowingBorder className="w-full max-w-6xl">
-        <div className="p-4 bg-white rounded-xl">
+      <GlowingBorder className="w-full max-w-7xl">
+        <div className="p-3 bg-white rounded-xl">
           <img
             src="/image.png"
             alt="Pizza Go ERD"
@@ -385,16 +375,11 @@ export function DatabaseSlide() {
         </div>
       </GlowingBorder>
 
-      <div className="mt-4 flex flex-wrap justify-center gap-2 max-w-6xl">
-        {tables.map((table, i) => (
-          <span
-            key={i}
-            className="px-3 py-1 text-xs rounded-full bg-card/70 border border-border/50"
-          >
-            {table}
-          </span>
-        ))}
-      </div>
+      <p className="mt-4 text-sm text-muted-foreground text-center max-w-3xl">
+        PostgreSQL database design showing the relationships between Users,
+        Orders, Toppings, Order_Toppings, Machine_Commands, Machine_Logs,
+        Payments, and System Settings.
+      </p>
     </div>
   )
 }
