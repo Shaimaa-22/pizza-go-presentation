@@ -129,15 +129,11 @@ const transitions: Record<
 }
 
 const slideTransitions: TransitionType[] = [
-  "portal",
   "cube",
-  "flip",
-  "wave",
-  "rotate",
-  "glitch",
-  "zoom",
+  "portal",
   "morph",
-  "slide",
+  "zoom",
+  "wave",
   "fade",
 ]
 

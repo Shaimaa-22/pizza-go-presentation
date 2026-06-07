@@ -37,6 +37,7 @@ import {
   Table2,
   Rocket,
   HardDrive,
+  BookOpen,
 } from "lucide-react"
 
 // Slide 0: Title
@@ -121,18 +122,25 @@ export function ProblemSlide() {
     </div>
   )
 }
+
+// Slide 2: Functional Requirements
 export function FunctionalRequirementsSlide() {
-  const requirements = [
-    "User Registration",
-    "User Login",
-    "Pizza Customization",
-    "Order Placement",
-    "Online Payment",
-    "Order Tracking",
-    "Database Management",
-    "MQTT Communication",
-    "ESP32 Machine Control",
-    "Automated Pizza Preparation",
+  const groups = [
+    {
+      title: "User Features",
+      icon: Users,
+      items: ["Registration", "Login", "Pizza Customization", "Order Tracking"],
+    },
+    {
+      title: "System Features",
+      icon: Server,
+      items: ["Order Placement", "Online Payment", "Database Management"],
+    },
+    {
+      title: "Machine Features",
+      icon: Cpu,
+      items: ["MQTT Communication", "ESP32 Control", "Automated Preparation"],
+    },
   ]
 
   return (
@@ -141,30 +149,53 @@ export function FunctionalRequirementsSlide() {
         Functional <span className="gradient-text">Requirements</span>
       </h2>
 
-      <div className="grid grid-cols-2 gap-4 max-w-5xl">
-        {requirements.map((req, i) => (
-          <div
-            key={i}
-            className="p-4 rounded-xl bg-card/60 border border-border/50 flex items-center gap-3"
-          >
-            <CheckCircle2 className="w-5 h-5 text-green-500" />
-            <span>{req}</span>
-          </div>
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full">
+        {groups.map((group, i) => (
+          <StaggerItem key={i}>
+            <motion.div
+              className="h-full p-6 rounded-2xl bg-card/70 border border-border/50 backdrop-blur"
+              whileHover={{
+                scale: 1.04,
+                y: -8,
+                borderColor: "rgba(34, 197, 94, 0.5)",
+              }}
+            >
+              <div className="w-14 h-14 rounded-xl bg-green-500/20 flex items-center justify-center mb-5">
+                <group.icon className="w-7 h-7 text-green-500" />
+              </div>
+
+              <h3 className="text-xl font-bold mb-5">{group.title}</h3>
+
+              <div className="space-y-3">
+                {group.items.map((item, j) => (
+                  <div
+                    key={j}
+                    className="flex items-center gap-3 p-3 rounded-lg bg-background/40 border border-border/30"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-green-500" />
+                    <span className="text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
     </div>
   )
 }
+
+// Slide 3: Non-Functional Requirements
 export function NonFunctionalRequirementsSlide() {
   const requirements = [
-    "Performance",
-    "Reliability",
-    "Security",
-    "Availability",
-    "Usability",
-    "Scalability",
-    "Maintainability",
-    "Compatibility",
+    { title: "Performance", icon: Zap },
+    { title: "Reliability", icon: CheckCircle2 },
+    { title: "Security", icon: Lock },
+    { title: "Availability", icon: Globe },
+    { title: "Usability", icon: Monitor },
+    { title: "Scalability", icon: Rocket },
+    { title: "Maintainability", icon: Cog },
+    { title: "Compatibility", icon: Wifi },
   ]
 
   return (
@@ -173,21 +204,92 @@ export function NonFunctionalRequirementsSlide() {
         Non-Functional <span className="gradient-text">Requirements</span>
       </h2>
 
-      <div className="grid grid-cols-2 gap-4 max-w-4xl">
+      <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-6xl w-full">
         {requirements.map((req, i) => (
-          <div
-            key={i}
-            className="p-4 rounded-xl bg-card/60 border border-border/50 flex items-center gap-3"
-          >
-            <CheckCircle2 className="w-5 h-5 text-blue-500" />
-            <span>{req}</span>
-          </div>
+          <StaggerItem key={i}>
+            <motion.div
+              className="p-6 min-h-36 rounded-2xl bg-card/70 border border-border/50 flex flex-col items-center justify-center text-center gap-4"
+              whileHover={{
+                scale: 1.08,
+                rotateY: 8,
+                borderColor: "rgba(59, 130, 246, 0.6)",
+              }}
+            >
+              <div className="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center">
+                <req.icon className="w-7 h-7 text-blue-500" />
+              </div>
+
+              <h3 className="font-semibold text-base">{req.title}</h3>
+            </motion.div>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
+
+      <p className="mt-8 text-muted-foreground text-sm text-center max-w-3xl">
+        These requirements improve system quality, security, reliability, and user experience.
+      </p>
     </div>
   )
 }
-// Slide 2: Solution
+
+// Slide 4: Literature Review
+export function LiteratureReviewSlide() {
+  const studies = [
+    {
+      title: "Let's Pizza",
+      contribution: "Automated pizza vending",
+      limitation: "Limited customization",
+    },
+    {
+      title: "Picnic Robot",
+      contribution: "Robotic pizza assembly",
+      limitation: "Needs supervision",
+    },
+    {
+      title: "IoT Food Systems",
+      contribution: "Real-time monitoring",
+      limitation: "Monitoring only",
+    },
+    {
+      title: "Smart Ordering",
+      contribution: "Online ordering & payment",
+      limitation: "No machine integration",
+    },
+  ]
+
+  return (
+    <div className="w-full h-full flex flex-col items-center justify-center px-8">
+      <h2 className="text-5xl md:text-6xl font-bold mb-10">
+        Literature <span className="gradient-text">Review</span>
+      </h2>
+
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl w-full">
+        {studies.map((study, i) => (
+          <StaggerItem key={i}>
+            <div className="p-5 rounded-xl bg-card/70 border border-border/50">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                  <BookOpen className="w-5 h-5 text-primary" />
+                </div>
+
+                <h3 className="text-lg font-bold">{study.title}</h3>
+              </div>
+
+              <p className="text-green-400 text-sm mb-2">
+                {study.contribution}
+              </p>
+
+              <p className="text-muted-foreground text-sm">
+                {study.limitation}
+              </p>
+            </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  )
+}
+// Slide 5: Solution
 export function SolutionSlide() {
   const components = [
     { icon: Globe, title: "Web Platform", color: "from-blue-500 to-cyan-500" },
@@ -225,7 +327,7 @@ export function SolutionSlide() {
   )
 }
 
-// Slide 3: Technologies Used
+// Slide 6: Technologies Used
 export function TechnologiesSlide() {
   const techGroups = [
     { icon: Code2, title: "Frontend", items: ["HTML", "CSS", "JavaScript"] },
@@ -269,7 +371,7 @@ export function TechnologiesSlide() {
   )
 }
 
-// Slide 4: Architecture
+// Slide 7: Architecture
 export function ArchitectureSlide() {
   const layers = [
     { name: "Frontend", items: ["HTML", "CSS", "JavaScript", "Responsive Interface"], color: "border-blue-500" },
@@ -314,7 +416,7 @@ export function ArchitectureSlide() {
   )
 }
 
-// Slide 5: Workflow
+// Slide 8: Workflow
 export function WorkflowSlide() {
   const steps = [
     "Customer Places Order",
@@ -357,7 +459,7 @@ export function WorkflowSlide() {
   )
 }
 
-// Slide 6: Database / ERD
+// Slide 9: Database / ERD
 export function DatabaseSlide() {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center px-8 pb-20">
@@ -370,14 +472,15 @@ export function DatabaseSlide() {
           <img
             src="/image.png"
             alt="Pizza Go ERD"
-className="w-full h-[550px] object-contain rounded-lg"          />
+            className="w-full h-[550px] object-contain rounded-lg"
+          />
         </div>
       </GlowingBorder>
     </div>
   )
 }
 
-// Slide 7: Hardware
+// Slide 10: Hardware
 export function HardwareSlide() {
   const components = [
     { name: "ESP32 Microcontroller", qty: "1x" },
@@ -395,7 +498,6 @@ export function HardwareSlide() {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl w-full items-center">
-
         {/* Components List */}
         <StaggerContainer className="space-y-3">
           {components.map((comp, i) => (
@@ -419,7 +521,7 @@ export function HardwareSlide() {
             <img
               src="/image2.png"
               alt="Pizza Go Hardware"
-              className="w-full h-[500px] object-cover rounded-lg"
+              className="w-full h-[400px] object-cover rounded-lg"
             />
 
             <p className="text-center text-sm text-muted-foreground mt-3">
@@ -427,7 +529,6 @@ export function HardwareSlide() {
             </p>
           </div>
         </GlowingBorder>
-
       </div>
 
       <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -450,7 +551,8 @@ export function HardwareSlide() {
     </div>
   )
 }
-// Slide 8: Web Platform
+
+// Slide 11: Web Platform
 export function WebPlatformSlide() {
   const features = [
     { icon: Lock, title: "User Authentication", desc: "Secure login and registration" },
@@ -488,7 +590,7 @@ export function WebPlatformSlide() {
   )
 }
 
-// Slide 9: Testing
+// Slide 12: Testing
 export function TestingSlide() {
   const tests = [
     "User Registration",
@@ -537,7 +639,7 @@ export function TestingSlide() {
   )
 }
 
-// Slide 10: Results
+// Slide 13: Results
 export function ResultsSlide() {
   const results = [
     "User Registration Successful",
@@ -574,7 +676,7 @@ export function ResultsSlide() {
   )
 }
 
-// Slide 11: Competition
+// Slide 14: Competition
 export function CompetitionSlide() {
   const competitors = [
     { name: "Pizza Go", web: true, payment: true, database: true, mqtt: true, monitoring: true, highlight: true },
@@ -628,7 +730,7 @@ export function CompetitionSlide() {
   )
 }
 
-// Slide 12: Conclusion
+// Slide 15: Conclusion
 export function ConclusionSlide() {
   const futureWork = [
     { icon: Smartphone, title: "Mobile App", desc: "iOS and Android application" },
@@ -671,7 +773,7 @@ export function ConclusionSlide() {
   )
 }
 
-// Slide 13: Thank You
+// Slide 16: Thank You
 export function ThankYouSlide() {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center px-8 relative">

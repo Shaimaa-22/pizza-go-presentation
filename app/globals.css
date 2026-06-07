@@ -122,18 +122,29 @@
 
 /* Glow effects */
 .glow-orange {
-  box-shadow: 0 0 40px rgba(245, 158, 11, 0.3),
-              0 0 80px rgba(245, 158, 11, 0.2),
-              0 0 120px rgba(245, 158, 11, 0.1);
+  box-shadow:
+    0 0 60px rgba(245, 158, 11, 0.6),
+    0 0 120px rgba(245, 158, 11, 0.4),
+    0 0 180px rgba(245, 158, 11, 0.2);
 }
 
 .text-glow {
   text-shadow: 0 0 20px rgba(245, 158, 11, 0.5),
                0 0 40px rgba(245, 158, 11, 0.3);
 }
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
+}
+
 
 /* Gradient text */
 .gradient-text {
+    font-weight: 800;
   background: linear-gradient(135deg, #fbbf24, #f59e0b, #ef4444);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
