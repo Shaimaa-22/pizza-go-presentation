@@ -523,8 +523,7 @@ export function HardwareSlide() {
     { name: "ESP32 Microcontroller", qty: "1x" },
     { name: "Stepper Motors", qty: "3x" },
     { name: "Linear Actuators", qty: "6x" },
-    { name: "Vibration Motors", qty: "3x" },
-{ name: "Relay Modules", qty: "Multiple" },
+    { name: "Relay Modules", qty: "Multiple" },
     { name: "Power Supplies", qty: "12V / 5V" },
   ]
 
