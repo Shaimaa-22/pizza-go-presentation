@@ -522,7 +522,7 @@ export function HardwareSlide() {
   const components = [
     { name: "ESP32 Microcontroller", qty: "1x" },
     { name: "Stepper Motors", qty: "3x" },
-    { name: "Linear Actuators", qty: "6x" },
+    { name: "Linear Actuators", qty: "5x" },
     { name: "Relay Modules", qty: "Multiple" },
     { name: "Power Supplies", qty: "12V / 5V" },
   ]
