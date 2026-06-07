@@ -387,14 +387,14 @@ export function DatabaseSlide() {
 // Slide 7: Hardware
 export function HardwareSlide() {
   const components = [
-    { name: "ESP32 Microcontroller", qty: "1x", price: "80" },
-    { name: "Stepper Motors", qty: "3x", price: "400" },
-    { name: "Linear Actuators", qty: "6x", price: "1200" },
-    { name: "Vibration Motors", qty: "3x", price: "120" },
-    { name: "Relay Modules", qty: "20x", price: "300" },
-    { name: "Motor Drivers", qty: "3x", price: "240" },
-    { name: "PCF8575 Modules", qty: "2x", price: "120" },
-    { name: "Power Supplies", qty: "Multiple", price: "300" },
+    { name: "ESP32 Microcontroller", qty: "1x" },
+    { name: "Stepper Motors", qty: "3x" },
+    { name: "Linear Actuators", qty: "6x" },
+    { name: "Vibration Motors", qty: "3x" },
+    { name: "Relay Modules", qty: "20x" },
+    { name: "Motor Drivers", qty: "3x" },
+    { name: "PCF8575 Modules", qty: "2x" },
+    { name: "Power Supplies", qty: "Multiple" },
   ]
 
   return (
@@ -403,38 +403,58 @@ export function HardwareSlide() {
         Hardware <span className="gradient-text">Implementation</span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl w-full items-center">
+
+        {/* Components List */}
         <StaggerContainer className="space-y-3">
           {components.map((comp, i) => (
             <StaggerItem key={i}>
-              <div className="flex items-center justify-between p-4 rounded-lg bg-card/60 backdrop-blur border border-border/50">
-                <div className="flex items-center gap-3">
-                  <span className="text-xs text-primary bg-primary/20 px-2 py-1 rounded">{comp.qty}</span>
-                  <span>{comp.name}</span>
-                </div>
-                <span className="text-muted-foreground">{comp.price} ILS</span>
+              <div className="flex items-center gap-4 p-4 rounded-lg bg-card/60 backdrop-blur border border-border/50">
+                <span className="text-xs text-primary bg-primary/20 px-3 py-1 rounded">
+                  {comp.qty}
+                </span>
+
+                <span className="font-medium">
+                  {comp.name}
+                </span>
               </div>
             </StaggerItem>
           ))}
         </StaggerContainer>
 
+        {/* Real Hardware Image */}
         <GlowingBorder>
-          <div className="p-8 text-center h-full flex flex-col justify-center">
-            <HardDrive className="w-16 h-16 text-primary mx-auto mb-4" />
-            <span className="text-sm text-muted-foreground uppercase tracking-wider">Estimated Hardware Cost</span>
-            <AnimatedCounter value={9390} suffix=" ILS" className="text-5xl font-bold gradient-text mt-2" />
-            <div className="mt-4 flex justify-center gap-2 flex-wrap">
-              <span className="px-3 py-1 text-xs rounded-full bg-green-500/20 text-green-400">Prototype Ready</span>
-              <span className="px-3 py-1 text-xs rounded-full bg-blue-500/20 text-blue-400">IoT-Based</span>
-              <span className="px-3 py-1 text-xs rounded-full bg-primary/20 text-primary">Machine Control</span>
-            </div>
+          <div className="p-3 bg-card rounded-xl">
+            <img
+              src="/image2.png"
+              alt="Pizza Go Hardware"
+              className="w-full h-[500px] object-contain rounded-lg"
+            />
           </div>
         </GlowingBorder>
+
+      </div>
+
+      <div className="mt-6 flex flex-wrap justify-center gap-3">
+        <span className="px-4 py-2 rounded-full bg-green-500/20 text-green-400 text-sm">
+          Prototype Completed
+        </span>
+
+        <span className="px-4 py-2 rounded-full bg-blue-500/20 text-blue-400 text-sm">
+          ESP32 Controlled
+        </span>
+
+        <span className="px-4 py-2 rounded-full bg-primary/20 text-primary text-sm">
+          MQTT Integrated
+        </span>
+
+        <span className="px-4 py-2 rounded-full bg-orange-500/20 text-orange-400 text-sm">
+          Automated Preparation
+        </span>
       </div>
     </div>
   )
 }
-
 // Slide 8: Web Platform
 export function WebPlatformSlide() {
   const features = [
