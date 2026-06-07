@@ -371,31 +371,29 @@ export function DatabaseSlide() {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center px-8">
-      <h2 className="text-5xl md:text-6xl font-bold mb-6">
+      <h2 className="text-5xl md:text-6xl font-bold mb-5">
         Database <span className="gradient-text">Design</span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl w-full items-center">
-        <GlowingBorder>
-          <div className="p-4 bg-white rounded-xl">
-            <img
-              src="/image.png"
-              alt="Pizza Go ERD"
-              className="w-full max-h-[430px] object-contain rounded-lg"
-            />
-          </div>
-        </GlowingBorder>
+      <GlowingBorder className="w-full max-w-6xl">
+        <div className="p-4 bg-white rounded-xl">
+          <img
+            src="/image.png"
+            alt="Pizza Go ERD"
+            className="w-full h-[520px] object-contain rounded-lg"
+          />
+        </div>
+      </GlowingBorder>
 
-        <StaggerContainer className="grid grid-cols-1 gap-3">
-          {tables.map((table, i) => (
-            <StaggerItem key={i}>
-              <div className="p-4 rounded-lg bg-card/60 border border-border/50 flex items-center gap-3">
-                <Table2 className="w-5 h-5 text-primary" />
-                <span className="font-medium">{table}</span>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+      <div className="mt-4 flex flex-wrap justify-center gap-2 max-w-6xl">
+        {tables.map((table, i) => (
+          <span
+            key={i}
+            className="px-3 py-1 text-xs rounded-full bg-card/70 border border-border/50"
+          >
+            {table}
+          </span>
+        ))}
       </div>
     </div>
   )
