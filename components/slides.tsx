@@ -370,16 +370,9 @@ export function DatabaseSlide() {
           <img
             src="/image.png"
             alt="Pizza Go ERD"
-            className="w-full h-[520px] object-contain rounded-lg"
-          />
+className="w-full h-[580px] object-contain rounded-lg"          />
         </div>
       </GlowingBorder>
-
-      <p className="mt-4 text-sm text-muted-foreground text-center max-w-3xl">
-        PostgreSQL database design showing the relationships between Users,
-        Orders, Toppings, Order_Toppings, Machine_Commands, Machine_Logs,
-        Payments, and System Settings.
-      </p>
     </div>
   )
 }
