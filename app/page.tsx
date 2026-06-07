@@ -7,6 +7,8 @@ import { Navigation, Ticker } from "@/components/navigation"
 import {
   TitleSlide,
   ProblemSlide,
+  FunctionalRequirementsSlide,
+  NonFunctionalRequirementsSlide,
   SolutionSlide,
   TechnologiesSlide,
   ArchitectureSlide,
@@ -24,6 +26,8 @@ import {
 const slides = [
   TitleSlide,
   ProblemSlide,
+  FunctionalRequirementsSlide,
+  NonFunctionalRequirementsSlide,
   SolutionSlide,
   TechnologiesSlide,
   ArchitectureSlide,

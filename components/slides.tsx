@@ -121,7 +121,72 @@ export function ProblemSlide() {
     </div>
   )
 }
+export function FunctionalRequirementsSlide() {
+  const requirements = [
+    "User Registration",
+    "User Login",
+    "Pizza Customization",
+    "Order Placement",
+    "Online Payment",
+    "Order Tracking",
+    "Database Management",
+    "MQTT Communication",
+    "ESP32 Machine Control",
+    "Automated Pizza Preparation",
+  ]
 
+  return (
+    <div className="w-full h-full flex flex-col items-center justify-center px-8">
+      <h2 className="text-5xl md:text-6xl font-bold mb-10">
+        Functional <span className="gradient-text">Requirements</span>
+      </h2>
+
+      <div className="grid grid-cols-2 gap-4 max-w-5xl">
+        {requirements.map((req, i) => (
+          <div
+            key={i}
+            className="p-4 rounded-xl bg-card/60 border border-border/50 flex items-center gap-3"
+          >
+            <CheckCircle2 className="w-5 h-5 text-green-500" />
+            <span>{req}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+export function NonFunctionalRequirementsSlide() {
+  const requirements = [
+    "Performance",
+    "Reliability",
+    "Security",
+    "Availability",
+    "Usability",
+    "Scalability",
+    "Maintainability",
+    "Compatibility",
+  ]
+
+  return (
+    <div className="w-full h-full flex flex-col items-center justify-center px-8">
+      <h2 className="text-5xl md:text-6xl font-bold mb-10">
+        Non-Functional <span className="gradient-text">Requirements</span>
+      </h2>
+
+      <div className="grid grid-cols-2 gap-4 max-w-4xl">
+        {requirements.map((req, i) => (
+          <div
+            key={i}
+            className="p-4 rounded-xl bg-card/60 border border-border/50 flex items-center gap-3"
+          >
+            <CheckCircle2 className="w-5 h-5 text-blue-500" />
+            <span>{req}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
 // Slide 2: Solution
 export function SolutionSlide() {
   const components = [
