@@ -43,46 +43,80 @@ import {
 // Slide 0: Title
 export function TitleSlide() {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-8 relative">
-      <motion.div
-        initial={{ scale: 0, rotate: -180 }}
-        animate={{ scale: 1, rotate: 0 }}
-        transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.2 }}
-        className="mb-8"
-      >
-        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary via-accent to-pizza-red flex items-center justify-center glow-orange">
-          <Pizza className="w-16 h-16 text-background" />
+    <div className="w-full h-full flex items-center justify-center px-10 relative overflow-hidden">
+
+      {/* Background Glow */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[520px] h-[520px] bg-orange-500/20 blur-[120px] rounded-full" />
+
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-7xl w-full">
+
+        {/* Left Content */}
+        <div className="flex flex-col items-start">
+          <motion.span
+            className="px-5 py-2 rounded-full bg-primary/15 text-primary text-sm font-bold tracking-widest mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            GRADUATION PROJECT 2025–2026
+          </motion.span>
+
+          <motion.h1
+            className="text-7xl md:text-8xl font-black gradient-text text-glow mb-6 leading-none"
+            initial={{ opacity: 0, y: 45 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            PIZZA GO
+          </motion.h1>
+
+          <motion.p
+            className="text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-10"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            Smart Web-Based Pizza Ordering & Automated Preparation System
+          </motion.p>
+
+          <motion.div
+            className="p-6 rounded-2xl bg-card/60 backdrop-blur border border-border/50 min-w-[420px]"
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <h3 className="text-3xl font-bold text-foreground mb-2">
+              Shaimaa Dwedar
+            </h3>
+
+            <p className="text-xl text-primary font-semibold">
+              Supervisor: Dr. Emad Hamadeh
+            </p>
+          </motion.div>
         </div>
-      </motion.div>
 
-      <motion.h1
-        className="text-7xl md:text-9xl font-bold gradient-text text-glow mb-4"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.4 }}
-      >
-        PIZZA GO
-      </motion.h1>
+        {/* Right Logo */}
+        <motion.div
+          className="flex items-center justify-center"
+          initial={{ opacity: 0, scale: 0.7, rotate: -8 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ type: "spring", stiffness: 90, damping: 15, delay: 0.3 }}
+        >
+          <div className="relative">
+            <div className="absolute inset-0 bg-orange-500/30 blur-3xl rounded-full scale-125" />
 
-      <motion.p
-        className="text-xl md:text-2xl text-muted-foreground text-center max-w-3xl mb-8"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-      >
-        Smart Web-Based Pizza Ordering & Automated Preparation System
-      </motion.p>
+            <div className="relative w-72 h-72 rounded-full bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 p-1 shadow-2xl">
+              <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
+                <img
+                  src="/pizza-steve.png"
+                  alt="Pizza Go"
+                  className="w-56 h-56 object-contain drop-shadow-[0_0_45px_rgba(255,120,50,0.7)]"
+                />
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
-      <motion.div
-        className="flex flex-col items-center gap-4 text-muted-foreground"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-      >
-        <span className="text-lg">Shaimaa Dwedar</span>
-        <span className="text-sm opacity-60">Supervisor: Dr. Emad Hamadeh</span>
-        <span className="text-sm opacity-60">Graduation Project | 2025-2026</span>
-      </motion.div>
+      </div>
     </div>
   )
 }
@@ -173,8 +207,7 @@ export function FunctionalRequirementsSlide() {
                     className="flex items-center gap-3 p-3 rounded-lg bg-background/40 border border-border/30"
                   >
                     <CheckCircle2 className="w-5 h-5 text-green-500" />
-                    <span className="text-sm">{item}</span>
-                  </div>
+<span className="text-lg font-medium">{item}</span>                  </div>
                 ))}
               </div>
             </motion.div>
@@ -219,7 +252,8 @@ export function NonFunctionalRequirementsSlide() {
                 <req.icon className="w-7 h-7 text-blue-500" />
               </div>
 
-              <h3 className="font-semibold text-base">{req.title}</h3>
+              <h3 className="font-bold text-xl">
+                {req.title}</h3>
             </motion.div>
           </StaggerItem>
         ))}
@@ -275,12 +309,11 @@ export function LiteratureReviewSlide() {
                 <h3 className="text-lg font-bold">{study.title}</h3>
               </div>
 
-              <p className="text-green-400 text-sm mb-2">
-                {study.contribution}
+<p className="text-lg">
+                  {study.contribution}
               </p>
 
-              <p className="text-muted-foreground text-sm">
-                {study.limitation}
+<p className="text-lg">                {study.limitation}
               </p>
             </div>
           </StaggerItem>
@@ -389,12 +422,16 @@ export function ArchitectureSlide() {
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-6xl w-full">
         {layers.map((layer, i) => (
           <StaggerItem key={i}>
-            <div className={`p-5 rounded-xl bg-card/80 backdrop-blur border-l-4 ${layer.color} h-full`}>
-              <h3 className="text-lg font-bold mb-3">{layer.name}</h3>
-              <ul className="space-y-2">
-                {layer.items.map((item, j) => (
-                  <li key={j} className="text-sm text-muted-foreground flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            <div className={`p-6 rounded-xl bg-card/80 backdrop-blur border-l-4 ${layer.color} h-full`}>
+<h3 className="text-2xl font-bold mb-4">
+  {layer.name}
+</h3>             <ul className="space-y-3">
+              {layer.items.map((item, j) => (
+  <li
+    key={j}
+    className="text-base md:text-lg text-muted-foreground flex items-center gap-3"
+  >
+                       <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                     {item}
                   </li>
                 ))}
@@ -407,7 +444,7 @@ export function ArchitectureSlide() {
       <div className="mt-8 flex flex-wrap justify-center items-center gap-3">
         {["Order", "Payment", "Database", "MQTT", "ESP32", "Machine"].map((step, i) => (
           <div key={i} className="flex items-center">
-            <span className="px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-medium">{step}</span>
+            <span className="px-5 py-3 rounded-full bg-primary/20 text-primary text-base font-semibold">{step}</span>
             {i < 5 && <span className="mx-2 text-primary">→</span>}
           </div>
         ))}
@@ -445,7 +482,7 @@ export function WorkflowSlide() {
               <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold mb-3">
                 {i + 1}
               </div>
-              <p className="text-sm font-medium">{step}</p>
+              <p className="text-lg font-semibold">{step}</p>
             </motion.div>
           </StaggerItem>
         ))}
@@ -572,19 +609,27 @@ export function WebPlatformSlide() {
         A responsive website connected to backend, database, payment, and machine control
       </p>
 
-      <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl">
-        {features.map((feature, i) => (
-          <StaggerItem key={i}>
-            <div className="p-5 rounded-xl bg-card/60 backdrop-blur border border-border/50 flex flex-col items-center text-center gap-3">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <feature.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-semibold text-sm">{feature.title}</h3>
-              <p className="text-xs text-muted-foreground">{feature.desc}</p>
-            </div>
-          </StaggerItem>
-        ))}
-      </StaggerContainer>
+      <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-5 max-w-5xl">
+  {features.map((feature, i) => (
+    <StaggerItem key={i}>
+      <div className="p-6 rounded-xl bg-card/60 backdrop-blur border border-border/50 flex flex-col items-center text-center gap-4">
+
+        <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+          <feature.icon className="w-8 h-8 text-primary" />
+        </div>
+
+        <h3 className="font-bold text-lg">
+          {feature.title}
+        </h3>
+
+        <p className="text-base text-muted-foreground leading-relaxed">
+          {feature.desc}
+        </p>
+
+      </div>
+    </StaggerItem>
+  ))}
+</StaggerContainer>
     </div>
   )
 }
@@ -614,8 +659,7 @@ export function TestingSlide() {
           {tests.map((test, i) => (
             <StaggerItem key={i}>
               <div className="flex items-center justify-between p-3 rounded-lg bg-card/40 backdrop-blur">
-                <span className="text-sm">{test}</span>
-                <CheckCircle2 className="w-5 h-5 text-green-500" />
+<span className="text-lg font-medium">{test}</span>                <CheckCircle2 className="w-5 h-5 text-green-500" />
               </div>
             </StaggerItem>
           ))}
@@ -666,7 +710,7 @@ export function ResultsSlide() {
               whileHover={{ scale: 1.04, borderColor: "rgba(34, 197, 94, 0.5)" }}
             >
               <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-              <span className="text-sm font-medium">{result}</span>
+              <span className="text-lg font-semibold">{result}</span>
             </motion.div>
           </StaggerItem>
         ))}
@@ -694,19 +738,18 @@ export function CompetitionSlide() {
         <table className="w-full">
           <thead>
             <tr className="bg-secondary/50">
-              <th className="p-4 text-left text-sm">Solution</th>
-              <th className="p-4 text-center text-sm">Online Ordering</th>
-              <th className="p-4 text-center text-sm">Payment</th>
-              <th className="p-4 text-center text-sm">Database</th>
-              <th className="p-4 text-center text-sm">MQTT</th>
-              <th className="p-4 text-center text-sm">Monitoring</th>
+              <th className="p-4 text-left text-lg font-bold">Solution</th>
+              <th className="p-4 text-left text-lg font-bold">Online Ordering</th>
+              <th className="p-4 text-left text-lg font-bold">Payment</th>
+              <th className="p-4 text-left text-lg font-bold">Database</th>
+              <th className="p-4 text-left text-lg font-bold">MQTT</th>
+              <th className="p-4 text-left text-lg font-bold">Monitoring</th>
             </tr>
           </thead>
           <tbody>
             {competitors.map((comp, i) => (
               <tr key={i} className={`border-t border-border/30 ${comp.highlight ? "bg-primary/10" : ""}`}>
-                <td className="p-4 font-medium">
-                  <div className="flex items-center gap-2">
+<td className="p-4 text-lg font-semibold">                  <div className="flex items-center gap-2">
                     {comp.highlight && <Award className="w-4 h-4 text-primary" />}
                     <span className={comp.highlight ? "text-primary" : ""}>{comp.name}</span>
                   </div>
@@ -732,11 +775,27 @@ export function CompetitionSlide() {
 // Slide 15: Conclusion
 export function ConclusionSlide() {
   const futureWork = [
-    { icon: Smartphone, title: "Mobile App", desc: "iOS and Android application" },
-    { icon: Brain, title: "Computer Vision", desc: "Detect ingredient placement and quality" },
-    { icon: Languages, title: "Multi-language Support", desc: "Improve Arabic and English interface" },
-    { icon: Sparkles, title: "Advanced Automation", desc: "Improve ingredient control and machine accuracy" },
-  ]
+  {
+    icon: Brain,
+    title: "Computer Vision",
+    desc: "Automatic quality inspection",
+  },
+  {
+    icon: Cpu,
+    title: "Smart Temperature Control",
+    desc: "Adaptive oven temperature control",
+  },
+  {
+    icon: Workflow,
+    title: "Automatic Dough Loading",
+    desc: "Fully automated preparation process",
+  },
+  {
+    icon: Sparkles,
+    title: "AI Optimization",
+    desc: "Optimize ingredients and preparation",
+  },
+]
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center px-8">
@@ -744,31 +803,48 @@ export function ConclusionSlide() {
         Conclusion & <span className="gradient-text">Future Work</span>
       </h2>
 
-      <p className="text-lg text-muted-foreground text-center max-w-3xl mb-10">
-        Pizza Go successfully integrates web technologies, database management, IoT communication,
-        embedded systems, and mechanical automation into a complete automated pizza preparation platform.
-      </p>
+      <p className="text-xl text-muted-foreground text-center max-w-4xl mb-10 leading-relaxed">
+  Pizza Go successfully integrates web technologies, database management,
+  IoT communication, embedded systems, and mechanical automation into a
+  complete automated pizza preparation platform.
+</p>
 
-      <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl">
-        {futureWork.map((item, i) => (
-          <StaggerItem key={i}>
-            <div className="p-5 rounded-xl bg-card/60 backdrop-blur border border-border/50 flex flex-col items-center text-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <item.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-semibold text-sm">{item.title}</h3>
-              <p className="text-xs text-muted-foreground">{item.desc}</p>
-            </div>
-          </StaggerItem>
-        ))}
-      </StaggerContainer>
+<StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl">
+  {futureWork.map((item, i) => (
+    <StaggerItem key={i}>
+      <div className="p-6 rounded-xl bg-card/60 backdrop-blur border border-border/50 flex flex-col items-center text-center gap-4">
 
-      <div className="mt-10 flex gap-4 flex-wrap justify-center">
-        <span className="px-4 py-2 rounded-full bg-green-500/20 text-green-400 text-sm">Prototype Complete</span>
-        <span className="px-4 py-2 rounded-full bg-blue-500/20 text-blue-400 text-sm">IoT Integrated</span>
-        <span className="px-4 py-2 rounded-full bg-primary/20 text-primary text-sm">Future Expandable</span>
+        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+          <item.icon className="w-8 h-8 text-primary" />
+        </div>
+
+        <h3 className="font-bold text-lg">
+          {item.title}
+        </h3>
+
+        <p className="text-base text-muted-foreground">
+          {item.desc}
+        </p>
+
       </div>
-    </div>
+    </StaggerItem>
+  ))}
+</StaggerContainer>
+
+<div className="mt-10 flex gap-4 flex-wrap justify-center">
+  <span className="px-5 py-3 rounded-full bg-green-500/20 text-green-400 text-base font-medium">
+    Prototype Complete
+  </span>
+
+  <span className="px-5 py-3 rounded-full bg-blue-500/20 text-blue-400 text-base font-medium">
+    IoT Integrated
+  </span>
+
+  <span className="px-5 py-3 rounded-full bg-primary/20 text-primary text-base font-medium">
+    Future Expandable
+  </span>
+</div>
+</div>
   )
 }
 
@@ -794,7 +870,7 @@ export function ThankYouSlide() {
       <p className="text-2xl text-muted-foreground mb-8">Questions & Discussion</p>
 
       <div className="flex flex-col items-center gap-4">
-        <span className="text-muted-foreground">Shaimaa Dwedar</span>
+        <span className="text-2xl font-semibold">Shaimaa Dwedar</span>
         <span className="text-sm text-muted-foreground/60">Graduation Project | 2025-2026</span>
       </div>
 
