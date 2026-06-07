@@ -370,7 +370,7 @@ export function DatabaseSlide() {
           <img
             src="/image.png"
             alt="Pizza Go ERD"
-className="w-full h-[580px] object-contain rounded-lg"          />
+className="w-full h-[550px] object-contain rounded-lg"          />
         </div>
       </GlowingBorder>
     </div>
@@ -419,7 +419,7 @@ export function HardwareSlide() {
             <img
               src="/image2.png"
               alt="Pizza Go Hardware"
-              className="w-full h-[550px] object-cover rounded-lg"
+              className="w-full h-[500px] object-cover rounded-lg"
             />
 
             <p className="text-center text-sm text-muted-foreground mt-3">
