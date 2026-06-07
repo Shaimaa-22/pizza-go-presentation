@@ -487,7 +487,7 @@ export function HardwareSlide() {
     { name: "Stepper Motors", qty: "3x" },
     { name: "Linear Actuators", qty: "6x" },
     { name: "Vibration Motors", qty: "3x" },
-    { name: "Relay Modules", qty: "20x" },
+{ name: "Relay Modules", qty: "Multiple" },
     { name: "Power Supplies", qty: "12V / 5V" },
   ]
 
@@ -521,8 +521,7 @@ export function HardwareSlide() {
             <img
               src="/image2.png"
               alt="Pizza Go Hardware"
-              className="w-full h-[400px] object-cover rounded-lg"
-            />
+className="w-full h-[400px] object-contain rounded-lg"            />
 
             <p className="text-center text-sm text-muted-foreground mt-3">
               Pizza Go Prototype – Automated Pizza Preparation Machine
