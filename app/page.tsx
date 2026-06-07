@@ -8,26 +8,34 @@ import {
   TitleSlide,
   ProblemSlide,
   SolutionSlide,
+  TechnologiesSlide,
   ArchitectureSlide,
+  WorkflowSlide,
+  DatabaseSlide,
   HardwareSlide,
   WebPlatformSlide,
   TestingSlide,
+  ResultsSlide,
   CompetitionSlide,
   ConclusionSlide,
-  ThankYouSlide
+  ThankYouSlide,
 } from "@/components/slides"
 
 const slides = [
   TitleSlide,
   ProblemSlide,
   SolutionSlide,
+  TechnologiesSlide,
   ArchitectureSlide,
+  WorkflowSlide,
+  DatabaseSlide,
   HardwareSlide,
   WebPlatformSlide,
   TestingSlide,
+  ResultsSlide,
   CompetitionSlide,
   ConclusionSlide,
-  ThankYouSlide
+  ThankYouSlide,
 ]
 
 export default function Presentation() {
