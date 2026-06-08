@@ -404,55 +404,6 @@ export function TechnologiesSlide() {
   )
 }
 
-// Slide 7: Architecture
-export function ArchitectureSlide() {
-  const layers = [
-    { name: "Frontend", items: ["HTML", "CSS", "JavaScript", "Responsive Interface"], color: "border-blue-500" },
-    { name: "Backend", items: ["Node.js + Express", "REST API", "Stripe Payment"], color: "border-primary" },
-    { name: "Database", items: ["PostgreSQL", "Users & Orders", "Machine Logs"], color: "border-green-500" },
-    { name: "IoT Layer", items: ["MQTT Protocol", "ESP32 Controller", "Machine Commands"], color: "border-purple-500" },
-  ]
-
-  return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-8">
-      <h2 className="text-5xl md:text-6xl font-bold mb-12">
-        System <span className="gradient-text">Architecture</span>
-      </h2>
-
-      <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-6xl w-full">
-        {layers.map((layer, i) => (
-          <StaggerItem key={i}>
-            <div className={`p-6 rounded-xl bg-card/80 backdrop-blur border-l-4 ${layer.color} h-full`}>
-<h3 className="text-2xl font-bold mb-4">
-  {layer.name}
-</h3>             <ul className="space-y-3">
-              {layer.items.map((item, j) => (
-  <li
-    key={j}
-    className="text-base md:text-lg text-muted-foreground flex items-center gap-3"
-  >
-                       <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </StaggerItem>
-        ))}
-      </StaggerContainer>
-
-      <div className="mt-8 flex flex-wrap justify-center items-center gap-3">
-        {["Order", "Payment", "Database", "MQTT", "ESP32", "Machine"].map((step, i) => (
-          <div key={i} className="flex items-center">
-            <span className="px-5 py-3 rounded-full bg-primary/20 text-primary text-base font-semibold">{step}</span>
-            {i < 5 && <span className="mx-2 text-primary">→</span>}
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
 // Slide 8: Workflow
 export function WorkflowSlide() {
   const steps = [
@@ -524,7 +475,7 @@ export function HardwareSlide() {
     { name: "Stepper Motors", qty: "3x" },
     { name: "Linear Actuators", qty: "5x" },
     { name: "Relay Modules", qty: "Multiple" },
-    { name: "Power Supplies", qty: "12V / 5V" },
+    { name: "Power Supplies", qty: "12V / 5V/220AC" },
   ]
 
   return (
